@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11130F741DEE6A3E004724BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11130F731DEE6A3E004724BE /* main.m */; };
+		11130F771DEE6A3E004724BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11130F761DEE6A3E004724BE /* AppDelegate.m */; };
+		11130F7A1DEE6A3E004724BE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11130F791DEE6A3E004724BE /* ViewController.m */; };
+		11130F7D1DEE6A3E004724BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11130F7B1DEE6A3E004724BE /* Main.storyboard */; };
+		11130F7F1DEE6A3E004724BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11130F7E1DEE6A3E004724BE /* Assets.xcassets */; };
+		11130F821DEE6A3E004724BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11130F801DEE6A3E004724BE /* LaunchScreen.storyboard */; };
+		11130F8F1DEE6B46004724BE /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11130F8B1DEE6B46004724BE /* libWeChatSDK.a */; };
+		11130F921DEE6B5E004724BE /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 11130F901DEE6B5E004724BE /* AlipaySDK.bundle */; };
+		11130F931DEE6B5E004724BE /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11130F911DEE6B5E004724BE /* AlipaySDK.framework */; };
+		11130F961DEE6B82004724BE /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 11130F951DEE6B82004724BE /* libc++.tbd */; };
+		11130F981DEE6B88004724BE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 11130F971DEE6B88004724BE /* libsqlite3.0.tbd */; };
+		11130F9A1DEE6B8D004724BE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 11130F991DEE6B8D004724BE /* libz.tbd */; };
+		11130F9C1DEE6B92004724BE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11130F9B1DEE6B92004724BE /* SystemConfiguration.framework */; };
+		11130F9E1DEE6B9D004724BE /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11130F9D1DEE6B9D004724BE /* CoreTelephony.framework */; };
+		11130FA01DEE6BA2004724BE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11130F9F1DEE6BA2004724BE /* Security.framework */; };
+		11130FA21DEE6BA7004724BE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11130FA11DEE6BA7004724BE /* CFNetwork.framework */; };
+		11130FA41DEE6BBC004724BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11130FA31DEE6BBC004724BE /* CoreGraphics.framework */; };
+		11130FA61DEE6BC1004724BE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11130FA51DEE6BC1004724BE /* CoreText.framework */; };
+		11130FA81DEE6BC7004724BE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11130FA71DEE6BC7004724BE /* QuartzCore.framework */; };
+		11130FAA1DEE6BCF004724BE /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11130FA91DEE6BCF004724BE /* CoreMotion.framework */; };
+		11130FAD1DEE6E52004724BE /* FLPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11130FAC1DEE6E52004724BE /* FLPayManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		11130F6F1DEE6A3E004724BE /* FLPayManagerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLPayManagerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11130F731DEE6A3E004724BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		11130F751DEE6A3E004724BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		11130F761DEE6A3E004724BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		11130F781DEE6A3E004724BE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		11130F791DEE6A3E004724BE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		11130F7C1DEE6A3E004724BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11130F7E1DEE6A3E004724BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11130F811DEE6A3E004724BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		11130F831DEE6A3E004724BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11130F8B1DEE6B46004724BE /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		11130F8C1DEE6B46004724BE /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		11130F8D1DEE6B46004724BE /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		11130F8E1DEE6B46004724BE /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		11130F901DEE6B5E004724BE /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		11130F911DEE6B5E004724BE /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		11130F951DEE6B82004724BE /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		11130F971DEE6B88004724BE /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		11130F991DEE6B8D004724BE /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		11130F9B1DEE6B92004724BE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		11130F9D1DEE6B9D004724BE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		11130F9F1DEE6BA2004724BE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		11130FA11DEE6BA7004724BE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		11130FA31DEE6BBC004724BE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		11130FA51DEE6BC1004724BE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		11130FA71DEE6BC7004724BE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		11130FA91DEE6BCF004724BE /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		11130FAB1DEE6E52004724BE /* FLPayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLPayManager.h; sourceTree = "<group>"; };
+		11130FAC1DEE6E52004724BE /* FLPayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLPayManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11130F6C1DEE6A3E004724BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11130FAA1DEE6BCF004724BE /* CoreMotion.framework in Frameworks */,
+				11130FA81DEE6BC7004724BE /* QuartzCore.framework in Frameworks */,
+				11130FA61DEE6BC1004724BE /* CoreText.framework in Frameworks */,
+				11130FA41DEE6BBC004724BE /* CoreGraphics.framework in Frameworks */,
+				11130FA21DEE6BA7004724BE /* CFNetwork.framework in Frameworks */,
+				11130FA01DEE6BA2004724BE /* Security.framework in Frameworks */,
+				11130F9E1DEE6B9D004724BE /* CoreTelephony.framework in Frameworks */,
+				11130F9C1DEE6B92004724BE /* SystemConfiguration.framework in Frameworks */,
+				11130F9A1DEE6B8D004724BE /* libz.tbd in Frameworks */,
+				11130F981DEE6B88004724BE /* libsqlite3.0.tbd in Frameworks */,
+				11130F961DEE6B82004724BE /* libc++.tbd in Frameworks */,
+				11130F8F1DEE6B46004724BE /* libWeChatSDK.a in Frameworks */,
+				11130F931DEE6B5E004724BE /* AlipaySDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11130F661DEE6A3D004724BE = {
+			isa = PBXGroup;
+			children = (
+				11130F711DEE6A3E004724BE /* FLPayManagerDemo */,
+				11130F701DEE6A3E004724BE /* Products */,
+				11130F941DEE6B82004724BE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		11130F701DEE6A3E004724BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11130F6F1DEE6A3E004724BE /* FLPayManagerDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11130F711DEE6A3E004724BE /* FLPayManagerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				11130FAF1DEED851004724BE /* FLPayManager */,
+				11130F891DEE6B36004724BE /* Alipay */,
+				11130F8A1DEE6B36004724BE /* WechatPay */,
+				11130F751DEE6A3E004724BE /* AppDelegate.h */,
+				11130F761DEE6A3E004724BE /* AppDelegate.m */,
+				11130F781DEE6A3E004724BE /* ViewController.h */,
+				11130F791DEE6A3E004724BE /* ViewController.m */,
+				11130F7B1DEE6A3E004724BE /* Main.storyboard */,
+				11130F7E1DEE6A3E004724BE /* Assets.xcassets */,
+				11130F801DEE6A3E004724BE /* LaunchScreen.storyboard */,
+				11130F831DEE6A3E004724BE /* Info.plist */,
+				11130F721DEE6A3E004724BE /* Supporting Files */,
+			);
+			path = FLPayManagerDemo;
+			sourceTree = "<group>";
+		};
+		11130F721DEE6A3E004724BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				11130F731DEE6A3E004724BE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11130F891DEE6B36004724BE /* Alipay */ = {
+			isa = PBXGroup;
+			children = (
+				11130F901DEE6B5E004724BE /* AlipaySDK.bundle */,
+				11130F911DEE6B5E004724BE /* AlipaySDK.framework */,
+			);
+			path = Alipay;
+			sourceTree = "<group>";
+		};
+		11130F8A1DEE6B36004724BE /* WechatPay */ = {
+			isa = PBXGroup;
+			children = (
+				11130F8B1DEE6B46004724BE /* libWeChatSDK.a */,
+				11130F8C1DEE6B46004724BE /* WechatAuthSDK.h */,
+				11130F8D1DEE6B46004724BE /* WXApi.h */,
+				11130F8E1DEE6B46004724BE /* WXApiObject.h */,
+			);
+			path = WechatPay;
+			sourceTree = "<group>";
+		};
+		11130F941DEE6B82004724BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11130FA91DEE6BCF004724BE /* CoreMotion.framework */,
+				11130FA71DEE6BC7004724BE /* QuartzCore.framework */,
+				11130FA51DEE6BC1004724BE /* CoreText.framework */,
+				11130FA31DEE6BBC004724BE /* CoreGraphics.framework */,
+				11130FA11DEE6BA7004724BE /* CFNetwork.framework */,
+				11130F9F1DEE6BA2004724BE /* Security.framework */,
+				11130F9D1DEE6B9D004724BE /* CoreTelephony.framework */,
+				11130F9B1DEE6B92004724BE /* SystemConfiguration.framework */,
+				11130F991DEE6B8D004724BE /* libz.tbd */,
+				11130F971DEE6B88004724BE /* libsqlite3.0.tbd */,
+				11130F951DEE6B82004724BE /* libc++.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		11130FAF1DEED851004724BE /* FLPayManager */ = {
+			isa = PBXGroup;
+			children = (
+				11130FAB1DEE6E52004724BE /* FLPayManager.h */,
+				11130FAC1DEE6E52004724BE /* FLPayManager.m */,
+			);
+			name = FLPayManager;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11130F6E1DEE6A3E004724BE /* FLPayManagerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11130F861DEE6A3E004724BE /* Build configuration list for PBXNativeTarget "FLPayManagerDemo" */;
+			buildPhases = (
+				11130F6B1DEE6A3E004724BE /* Sources */,
+				11130F6C1DEE6A3E004724BE /* Frameworks */,
+				11130F6D1DEE6A3E004724BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FLPayManagerDemo;
+			productName = FLPayManagerDemo;
+			productReference = 11130F6F1DEE6A3E004724BE /* FLPayManagerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11130F671DEE6A3D004724BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = gitKong;
+				TargetAttributes = {
+					11130F6E1DEE6A3E004724BE = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = GB8FE8WWF8;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 11130F6A1DEE6A3D004724BE /* Build configuration list for PBXProject "FLPayManagerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11130F661DEE6A3D004724BE;
+			productRefGroup = 11130F701DEE6A3E004724BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11130F6E1DEE6A3E004724BE /* FLPayManagerDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11130F6D1DEE6A3E004724BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11130F821DEE6A3E004724BE /* LaunchScreen.storyboard in Resources */,
+				11130F7F1DEE6A3E004724BE /* Assets.xcassets in Resources */,
+				11130F921DEE6B5E004724BE /* AlipaySDK.bundle in Resources */,
+				11130F7D1DEE6A3E004724BE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11130F6B1DEE6A3E004724BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11130FAD1DEE6E52004724BE /* FLPayManager.m in Sources */,
+				11130F7A1DEE6A3E004724BE /* ViewController.m in Sources */,
+				11130F771DEE6A3E004724BE /* AppDelegate.m in Sources */,
+				11130F741DEE6A3E004724BE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		11130F7B1DEE6A3E004724BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11130F7C1DEE6A3E004724BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		11130F801DEE6A3E004724BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11130F811DEE6A3E004724BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11130F841DEE6A3E004724BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		11130F851DEE6A3E004724BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11130F871DEE6A3E004724BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GB8FE8WWF8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FLPayManagerDemo/Alipay",
+				);
+				INFOPLIST_FILE = FLPayManagerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FLPayManagerDemo/WechatPay",
+				);
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = gitKong.FLPayManagerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		11130F881DEE6A3E004724BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GB8FE8WWF8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FLPayManagerDemo/Alipay",
+				);
+				INFOPLIST_FILE = FLPayManagerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FLPayManagerDemo/WechatPay",
+				);
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = gitKong.FLPayManagerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11130F6A1DEE6A3D004724BE /* Build configuration list for PBXProject "FLPayManagerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11130F841DEE6A3E004724BE /* Debug */,
+				11130F851DEE6A3E004724BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11130F861DEE6A3E004724BE /* Build configuration list for PBXNativeTarget "FLPayManagerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11130F871DEE6A3E004724BE /* Debug */,
+				11130F881DEE6A3E004724BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 11130F671DEE6A3D004724BE /* Project object */;
+}
