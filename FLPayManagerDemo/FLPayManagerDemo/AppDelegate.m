@@ -36,13 +36,14 @@
  *
  *  iOS 9.0 以上（包括iOS9.0）
  */
+
 - (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options{
     
     return [FLPAYMANAGER fl_handleUrl:url];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
     [FLPAYMANAGER fl_registerApp];
     
     return YES;
