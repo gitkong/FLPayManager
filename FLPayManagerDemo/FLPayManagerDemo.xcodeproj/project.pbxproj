@@ -25,6 +25,9 @@
 		11130FA81DEE6BC7004724BE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11130FA71DEE6BC7004724BE /* QuartzCore.framework */; };
 		11130FAA1DEE6BCF004724BE /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11130FA91DEE6BCF004724BE /* CoreMotion.framework */; };
 		11130FAD1DEE6E52004724BE /* FLPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 11130FAC1DEE6E52004724BE /* FLPayManager.m */; };
+		117B02D51DF54D2800876FB4 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 117B02D31DF54D2800876FB4 /* AlipaySDK.bundle */; };
+		117B02D61DF54D2800876FB4 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117B02D41DF54D2800876FB4 /* AlipaySDK.framework */; };
+		117B02DB1DF54D2F00876FB4 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 117B02D71DF54D2F00876FB4 /* libWeChatSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,12 @@
 		11130FA91DEE6BCF004724BE /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		11130FAB1DEE6E52004724BE /* FLPayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLPayManager.h; sourceTree = "<group>"; };
 		11130FAC1DEE6E52004724BE /* FLPayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLPayManager.m; sourceTree = "<group>"; };
+		117B02D31DF54D2800876FB4 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		117B02D41DF54D2800876FB4 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		117B02D71DF54D2F00876FB4 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		117B02D81DF54D2F00876FB4 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		117B02D91DF54D2F00876FB4 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		117B02DA1DF54D2F00876FB4 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +71,9 @@
 				11130FA81DEE6BC7004724BE /* QuartzCore.framework in Frameworks */,
 				11130FA61DEE6BC1004724BE /* CoreText.framework in Frameworks */,
 				11130FA41DEE6BBC004724BE /* CoreGraphics.framework in Frameworks */,
+				117B02DB1DF54D2F00876FB4 /* libWeChatSDK.a in Frameworks */,
 				11130FA21DEE6BA7004724BE /* CFNetwork.framework in Frameworks */,
+				117B02D61DF54D2800876FB4 /* AlipaySDK.framework in Frameworks */,
 				11130FA01DEE6BA2004724BE /* Security.framework in Frameworks */,
 				11130F9E1DEE6B9D004724BE /* CoreTelephony.framework in Frameworks */,
 				11130F9C1DEE6B92004724BE /* SystemConfiguration.framework in Frameworks */,
@@ -122,6 +133,8 @@
 		11130F891DEE6B36004724BE /* Alipay */ = {
 			isa = PBXGroup;
 			children = (
+				117B02D31DF54D2800876FB4 /* AlipaySDK.bundle */,
+				117B02D41DF54D2800876FB4 /* AlipaySDK.framework */,
 			);
 			path = Alipay;
 			sourceTree = "<group>";
@@ -129,6 +142,10 @@
 		11130F8A1DEE6B36004724BE /* WechatPay */ = {
 			isa = PBXGroup;
 			children = (
+				117B02D71DF54D2F00876FB4 /* libWeChatSDK.a */,
+				117B02D81DF54D2F00876FB4 /* WechatAuthSDK.h */,
+				117B02D91DF54D2F00876FB4 /* WXApi.h */,
+				117B02DA1DF54D2F00876FB4 /* WXApiObject.h */,
 			);
 			path = WechatPay;
 			sourceTree = "<group>";
@@ -221,6 +238,7 @@
 			files = (
 				11130F821DEE6A3E004724BE /* LaunchScreen.storyboard in Resources */,
 				11130F7F1DEE6A3E004724BE /* Assets.xcassets in Resources */,
+				117B02D51DF54D2800876FB4 /* AlipaySDK.bundle in Resources */,
 				11130F7D1DEE6A3E004724BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

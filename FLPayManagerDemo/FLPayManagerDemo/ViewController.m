@@ -37,7 +37,26 @@
 
 
 - (void)wechatPay {
-    [self jumpToBizPay];
+//    NSLog(@"%@",[self jumpToBizPay]);
+    PayReq* req             = [[PayReq alloc] init];
+    //                req.partnerId           = [dict objectForKey:@"partnerid"];
+    //                req.prepayId            = [dict objectForKey:@"prepayid"];
+    //                req.nonceStr            = [dict objectForKey:@"noncestr"];
+    //                req.timeStamp           = stamp.intValue;
+    //                req.package             = [dict objectForKey:@"package"];
+    //                req.sign                = [dict objectForKey:@"sign"];
+    
+    req.partnerId = @"10000100";
+    req.prepayId= @"1101000000140415649af9fc314aa427";
+    req.package = @"Sign=WXPay";
+    req.nonceStr= @"a462b76e7436e98e0ed6e13c64b4fd1c";
+    req.timeStamp= @"1397527777".intValue;
+    req.sign= @"582282D72DD2B03AD892830965F428CB16E7A256";
+    
+    [FLPAYMANAGER fl_payWithOrderMessage:req callBack:^(FLErrCode errCode, NSString *errStr) {
+        NSLog(@"errCode = %zd,errStr = %@",errCode,errStr);
+    }];
+
 }
 
 - (void)aliPay{
@@ -54,6 +73,8 @@
 
 
 - (NSString *)jumpToBizPay {
+    
+    
     
     //============================================================
     /**
@@ -89,6 +110,7 @@
                 req.package             = [dict objectForKey:@"package"];
                 req.sign                = [dict objectForKey:@"sign"];
                 
+                
                 [FLPAYMANAGER fl_payWithOrderMessage:req callBack:^(FLErrCode errCode, NSString *errStr) {
                     NSLog(@"errCode = %zd,errStr = %@",errCode,errStr);
                 }];
@@ -105,7 +127,9 @@
     }else{
         return @"服务器返回错误";
     }
+    
 }
+
 
 
 @end
