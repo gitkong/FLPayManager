@@ -1,9 +1,9 @@
-#一、前言
+# 一、前言
 - **1、之前写了一篇[支付宝支付——统一wap和支付宝钱包回调](http://www.jianshu.com/p/3d4271227a17),然后有需求说也弄一个微信支付的，block回调，其实微信支付的API提供挺好的，只有一个代理方法处理支付结果，不像支付宝有两种回调，当然，使用block回调简单很多，所以我也单独封装了 [微信支付，block回调](https://github.com/gitkong/FLWXPayManager) 此处就不开篇讲解了，大家需要的话可以去我的gitHub上clone**
 
 - **2、还有提出要整合支付宝和微信，这个提议不错，因为集成支付功能的app一般都有支付宝和微信，既然两种都需要，那么统一管理岂不是很方便！所以本篇主要讲解统一管理的工具封装。**
 
-#二、支付宝和微信API分析
+# 二、支付宝和微信API分析
 - 作者在此对比了支付宝和微信的支付API，分析一下它们接口的异同点：[支付宝官方文档](https://doc.open.alipay.com/doc2/detail.htm?treeId=204&articleId=105302&docType=1)     [微信官方文档](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=8_5)
   -  （1）支付宝是不需要在`didFinishLaunchingWithOptions` 中注册，而微信则需要调用`registerApp` 注册
 
@@ -11,9 +11,10 @@
 
   -  （3）支付宝发起支付是传入订单信息（字符串类型），而微信则传入一个`BaseReq` 类或者其子类（支付的是`PayReq` 类），此时根据这点差异性可以通过传入id 类型，然后内部做判断，进行跳转不同的支付方式，来看看他们的接口
 
-  >**支付宝发起支付**
+  > **支付宝发起支付**
 
   ```
+  
   /**
    *  支付接口
    *
@@ -24,11 +25,13 @@
   - (void)payOrder:(NSString *)orderStr
         fromScheme:(NSString *)schemeStr
           callback:(CompletionBlock)completionBlock;
+          
   ```
   
-  >**微信发起支付**
+  > **微信发起支付**
 
   ```
+  
 /*! @brief 发送请求到微信，等待微信返回onResp
  *
  * 函数调用后，会切换到微信的界面。第三方应用程序等待微信返回onResp。微信在异步处理完成后一定会调用onResp。支持以下类型
@@ -37,6 +40,7 @@
  * @return 成功返回YES，失败返回NO。
  */
 +(BOOL) sendReq:(BaseReq*)req;
+
   ```
   
   -  （4）支付宝发起支付不单单传入订单信息，还需要传入appSchemes（就是在Info - URL Types 中配置的 App Schemes），而微信 发起支付只需要传入订单信息，它的appSchemes 在 `didFinishLaunchingWithOptions` 注册的时候已经传入了，因此可以考虑 我也在`didFinishLaunchingWithOptions` 中给支付宝绑定一个 appSchemes ，类似微信，然后在发起支付的时候就不需要传入，只需要在内部获取就行，当然，由于Url Scheme 是存储在`Info.plist` 文件中，因此可以用代码获取，就不需要调用者传入了，只需要按照本工具的规定就搞定
@@ -48,7 +52,7 @@
 
   -  （6）支付宝每一个状态码都对应一个状态信息，而微信则只有错误的时候（errCode = -1）才有对应状态信息，可参考支付宝，手动给微信添加返回状态信息
 
-#三、集成
+# 三、集成
 - **1、支付宝支付集成 （三个步骤）**
   -  （1）由于支付宝不支持Pod，那么[下载最新的SDK](https://doc.open.alipay.com/doc2/detail.htm?treeId=54&articleId=104509&docType=1)，拖到项目中
 
@@ -91,44 +95,51 @@
   -  （6）当然此时运行应该还有问题，提示少了类 `Expected a type`，其实就是 `WXApiObject.h` 和 `WXApi.h` 少导入了  `UIKit` 框架,因为微信官方Demo中用到了PCH 文件，文件中导入了 `UIKit` 框架,手动添加进去就没问题了
 
 
-#四、封装 API 
+# 四、封装 API 
 
- >1、单例模式，项目中唯一，方便统一管理
+ > 1、单例模式，项目中唯一，方便统一管理
 
 ```
+
 /**
  *  @author gitKong
  *
  *  单例管理
  */
 + (instancetype)shareManager;
-```
-
->2、处理回调url，需要在AppDelegate中实现
 
 ```
+
+> 2、处理回调url，需要在AppDelegate中实现
+
+```
+
 /**
  *  @author gitKong
  *
  *  处理跳转url，回到应用，需要在delegate中实现
  */
 - (BOOL)fl_handleUrl:(NSURL *)url;
-```
-
->3、注册app，需要在 didFinishLaunchingWithOptions 中调用，绑定URL Scheme
 
 ```
+
+> 3、注册app，需要在 didFinishLaunchingWithOptions 中调用，绑定URL Scheme
+
+```
+
 /**
  *  @author gitKong
  *
  *  注册App，需要在 didFinishLaunchingWithOptions 中调用
  */
 - (void)fl_registerApp;
-```
-
->4、发起支付，传入订单参数类型是id，传入如果是字符串，则对应是跳转支付宝支付；如果传入PayReq 对象，这跳转微信支付,注意，不能传入空字符串或者nil，内部有对应断言;统一了回调，不管是支付宝的wap 还是 app，或者是微信支付，都是通过这个block回调，回调状态码都有对应的状态信息
 
 ```
+
+> 4、发起支付，传入订单参数类型是id，传入如果是字符串，则对应是跳转支付宝支付；如果传入PayReq 对象，这跳转微信支付,注意，不能传入空字符串或者nil，内部有对应断言;统一了回调，不管是支付宝的wap 还是 app，或者是微信支付，都是通过这个block回调，回调状态码都有对应的状态信息
+
+```
+
 /**
  *  @author gitKong
  *
@@ -138,14 +149,16 @@
  * @param callBack     回调，有返回状态信息
  */
 - (void)fl_payWithOrderMessage:(id)orderMessage callBack:(FLCompleteCallBack)callBack;
+
 ```
 
 
-#五、用法（基于SDK集成后）
+# 五、用法（基于SDK集成后）
 
 > **1、在`AppDelegate`处理回调，一般只需要实现后面两个方法即可，为了避免不必要的麻烦，最好三个都写上**
 
 ```
+
 /**
  *  @author gitKong
  *
@@ -175,33 +188,39 @@
     
     return [FLPAYMANAGER fl_handleUrl:url];
 }
-```
-
->**2、在`didFinishLaunchingWithOptions`中注册 app，内部绑定根据Info中对应的Url Types 绑定 `URL Scheme`**
 
 ```
+
+> **2、在`didFinishLaunchingWithOptions`中注册 app，内部绑定根据Info中对应的Url Types 绑定 `URL Scheme`**
+
+```
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     // 注册app
     [FLPAYMANAGER fl_registerApp];
     return YES;
 }
+
 ```
 
->3、**发起支付**
+> 3、**发起支付**
 
 -  支付宝支付
 
 ```
+
 NSString *orderMessage = @"Demo 中 有 可测试的 订单信息";
 [FLPAYMANAGER fl_payWithOrderMessage:orderMessage callBack:^(FLErrCode errCode, NSString *errStr) {
    NSLog(@"errCode = %zd,errStr = %@",errCode,errStr);
 }];
+
 ```
 
 - 微信支付
 
 ```
+
 //调起微信支付
  PayReq* req             = [[PayReq alloc] init];
  req.partnerId           = [dict objectForKey:@"partnerid"];
@@ -214,9 +233,11 @@ NSString *orderMessage = @"Demo 中 有 可测试的 订单信息";
  [FLPAYMANAGER fl_payWithOrderMessage:req callBack:^(FLErrCode errCode, NSString *errStr) {
      NSLog(@"errCode = %zd,errStr = %@",errCode,errStr);
  }];
+ 
 ```
 
-#六、此工具的优点
+# 六、此工具的优点
+
 - 1、隔离框架，统一管理，维护方便
 
 - 2、针对支付功能来封装一套API，用法简单，可读性强
@@ -230,10 +251,11 @@ NSString *orderMessage = @"Demo 中 有 可测试的 订单信息";
   ![比较完善的断言，避免不必要的错误](http://upload-images.jianshu.io/upload_images/1085031-0e74c0505083a663.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-#七、注意点：
+# 七、注意点：
 - 1、`Info.plist` 配置 `Url Types`  的 `Identifier` 必须 保证 和 工具中的对应，默认微信的 `Identifier` 是 `weixin` ，支付宝的 `Identifier` 是 `zhifubao`，可修改
 
   ```
+  
 /**
  *  @author gitKong
  *
@@ -241,6 +263,7 @@ NSString *orderMessage = @"Demo 中 有 可测试的 订单信息";
  */
 #define FLWECHATURLNAME @"weixin"
 #define FLALIPAYURLNAME @"zhifubao"
+
   ```
 
 - 2、因为工具中添加了比较完善的断言，配置不完整或者是传参不正确，程序都会不可避免的崩溃
@@ -249,7 +272,8 @@ NSString *orderMessage = @"Demo 中 有 可测试的 订单信息";
 [支付宝支付——统一wap和支付宝钱包回调](https://github.com/gitkong/FLAlipayManager)          
 [微信支付-block回调](https://github.com/gitkong/FLWXPayManager)
 
-#八、总结
+# 八、总结
+
 - 1、内部实现代码都比较简单，这里就不作详细分析，Demo中都有相对于的注释，给个 star 支持支持~
 
 - 2、封装的思路以及分析都已经详细说明了，如果大家有什么疑惑或者新的想法都可以留言给我,我都会一一回复！
