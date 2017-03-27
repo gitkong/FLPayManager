@@ -22,6 +22,7 @@
    *  @param schemeStr      调用支付的app注册在info.plist中的scheme
    *  @param completionBlock 支付结果回调Block，用于wap支付结果回调（非跳转钱包支付）
    */
+   
   - (void)payOrder:(NSString *)orderStr
         fromScheme:(NSString *)schemeStr
           callback:(CompletionBlock)completionBlock;
