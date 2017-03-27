@@ -25,6 +25,7 @@
         fromScheme:(NSString *)schemeStr
           callback:(CompletionBlock)completionBlock;
   ```
+  
   >**微信发起支付**
 
   ```
@@ -37,6 +38,7 @@
  */
 +(BOOL) sendReq:(BaseReq*)req;
   ```
+  
   -  （4）支付宝发起支付不单单传入订单信息，还需要传入appSchemes（就是在Info - URL Types 中配置的 App Schemes），而微信 发起支付只需要传入订单信息，它的appSchemes 在 `didFinishLaunchingWithOptions` 注册的时候已经传入了，因此可以考虑 我也在`didFinishLaunchingWithOptions` 中给支付宝绑定一个 appSchemes ，类似微信，然后在发起支付的时候就不需要传入，只需要在内部获取就行，当然，由于Url Scheme 是存储在`Info.plist` 文件中，因此可以用代码获取，就不需要调用者传入了，只需要按照本工具的规定就搞定
 
   -  （5）支付宝的支付返回状态不是以枚举类型返回，是用过回调中返回的字典中的 resultStatus 字段，而微信是通过枚举返回，此时可以统一为枚举，可参考微信
